@@ -4,7 +4,9 @@ const bcrypt = require('bcrypt'); //NOTE: Will need to refer back to User.js fro
 //and hash all of the passwords. May need to refer to the modules in order to
 //Get a better understanding of what that might entail.
 
-class User extends Model {}
+class User extends Model {
+    //add logic to check password here
+}
 
 User.init(
     {
