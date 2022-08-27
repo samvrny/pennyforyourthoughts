@@ -11,7 +11,7 @@ Post.belongsTo(User, {
 });
 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user-id',
 });
 
 Comment.belongsTo(Post, {

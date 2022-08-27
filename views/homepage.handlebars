@@ -4,10 +4,13 @@
         <div class="row justify-content-center">
             <li class="col-8">
                 <article>
-                    <h2>{{post.title}}</h2>
-                    <p>{{post.post_contents}}</p>
+                    <div class="title-body">
+                        <h2>{{post.title}}</h2>
+                        <p>{{post.post_contents}}</p>
+                        <p>Written By: {{user.username}}</p>
+                    </div>
                     <div>
-
+                        <a href="/api/posts/{{post.id}}">{{comment.comment_body}} comment(s)</a>
                     </div>
                 </article>
             </li>
