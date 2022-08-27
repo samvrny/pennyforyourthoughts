@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt'); //NOTE: Will need to refer back to User.js from just TN
-//and hash all of the passwords. May need to refer to the modules in order to
-//Get a better understanding of what that might entail.
+const bcrypt = require('bcrypt');
 
 class User extends Model {
-    //add logic to check password here
-}
+    // validatePassword(loginPassword) {
+    //     return bcrypt.compareSync(loginPassword, this.password);
+    // }
+} //NOTE: Will unfree this commented out portion for the login bit.
 
 User.init(
     {
@@ -30,7 +30,10 @@ User.init(
     },
     {
         hooks: {
-            //add password authentication here
+            async beforeCreate(newUser) {
+                newUser.password = await bcrypt.hash(newUser.password, 10);
+                return newUser;
+            } 
         },
         sequelize,
         timestamps: false,
