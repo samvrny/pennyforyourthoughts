@@ -38,9 +38,10 @@ async function login(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if(response.ok) {
+            window.alert(`Welcome, ${username}!`);
             document.location.replace('/'); //This will change to dahsboard
         } else {
-            alert(response.statusText);
+            window.alert('Incorrect credentials! Please try again.');
         }
     }
 }
