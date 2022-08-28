@@ -74,4 +74,8 @@ router.get('/post/:id', (req, res) =>  {
   });
 });
 
+router.get('/login', (req, res) => {
+  res.render('sign-login'); //can add more logic here to redirect if already logged in.
+});
+
 module.exports = router;
