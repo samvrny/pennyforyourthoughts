@@ -65,7 +65,7 @@ router.get('/post/:id', (req, res) =>  {
 
     res.render('post-comments', {
       post,
-      //add session login data here
+      loggedIn: req.session.loggedIn
     });
   })
   .catch(err => {

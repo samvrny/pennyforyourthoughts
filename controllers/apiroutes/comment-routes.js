@@ -13,17 +13,21 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => { //logic for cookies will need to be added
-     Comment.create({
-        comment_body: req.body.comment_body,
-        post_id: req.body.post_id,
-        user_id: req.body.user_id //goong to be req.session at some point once cookies are added
-    })
-    .then(dbCommentData => res.json(dbCommentData))
-    .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-    });
+router.post('/', (req, res) => {
+    console.log(req.body.comment_body);
+    console.log(req.body.post_id);
+    if(req.session) {
+        Comment.create({
+            comment_body: req.body.comment_body,
+            post_id: req.body.post_id,
+            user_id: req.session.user_id
+        })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+            //console.log(err);
+            res.status(400).json(err);
+        });
+    }
 });
 
 module.exports = router;

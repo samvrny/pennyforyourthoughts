@@ -57,6 +57,24 @@ nav {
     color: #0000EE;
 }
 
+.single-post {
+    border-bottom: 4px solid #1b9aaa;
+    margin-bottom: 10px;
+}
+
+.comments {
+    margin-top: 7px;
+}
+
+.comment-textarea {
+    border: 3px solid #ffc43d;
+    border-radius: 10px;
+    resize: none;
+    height: 200px;
+    width: 350px;
+    padding: 8px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
