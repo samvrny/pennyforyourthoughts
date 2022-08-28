@@ -31,8 +31,29 @@ header a {
     color: yellow;
 }
 
+nav {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
 .title-body h2 {
     border-bottom: 4px solid #1b9aaa;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: yellow;
+    font-size: 100%;
+    transition: color .1s;
+}
+
+.logout-btn:hover {
+    color: #0000EE;
 }
 
 footer {

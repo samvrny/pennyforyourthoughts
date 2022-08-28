@@ -4,6 +4,18 @@ const path = require('path');
 const allRoutes = require('./controllers');
 const expressHandlebars = require('express-handlebars');
 const handlebars = expressHandlebars.create({});
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+    secret: 'A beer a day',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,6 +23,7 @@ const PORT = process.env.PORT || 3001;
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
+app.use(session(sess));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
