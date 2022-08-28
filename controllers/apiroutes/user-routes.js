@@ -27,4 +27,33 @@ router.post('/', (req, res) => {
     })
 });
 
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    })
+    .then(dbUserData => {
+        if(!dbUserData) {
+            res.status(400).json({ message: 'There is no member with that username!' })
+            return;
+        }
+
+        const validPassword = dbUserData.validatePassword(req.body.password);
+
+        if(!validPassword) {
+            res.status(400).json({ message: 'Incorrect password! Try again.' });
+            return;
+        }
+        
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: dbUserData, message: `Welcome ${dbUserData.username}, you are now logged in!`});
+        });
+    });
+});
+
 module.exports = router;

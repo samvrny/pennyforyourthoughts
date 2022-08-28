@@ -3,9 +3,9 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 class User extends Model {
-    // validatePassword(loginPassword) {
-    //     return bcrypt.compareSync(loginPassword, this.password);
-    // }
+    validatePassword(loginPassword) {
+        return bcrypt.compareSync(loginPassword, this.password);
+    }
 } //NOTE: Will unfree this commented out portion for the login bit.
 
 User.init(
