@@ -14,10 +14,14 @@
             Simply Tech Stuff
         </h1>
         <nav>
+            {{#if loggedIn}}
             <a href="/">Homepage</a>
             <a href="/dashboard">My Dashboard</a>
             <button id="logout" class="logout-btn">Log Out</button>
+            {{else}}
+            <a href="/">Homepage</a>
             <a href="/login">Log In</a>
+            {{/if}}
         </nav>
     </header>
 
@@ -28,4 +32,7 @@
     <footer>
         Come back soon for more cool tech stuff!
     </footer>
+    {{!-- {{#if loggedIn}} --}}
+    <script src="/javascript/logout.js"></script>
+    {{!-- {{/if}} --}}
 </html>

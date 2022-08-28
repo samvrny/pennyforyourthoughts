@@ -1,6 +1,6 @@
 async function signUp(event) {
     event.preventDefault();
-    console.log('APPLE BABY');
+    
     const username = document.querySelector('#username-signup-input').value.trim();
     const password = document.querySelector('#password-signup-input').value.trim();
 
@@ -14,7 +14,6 @@ async function signUp(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if(response.ok) {
-            console.log('New user created! Cake for everyone!');
             window.alert('New user created!');
         } else {
             alert(response.statusText)
