@@ -8,8 +8,6 @@ async function postComment(event) {
     ];
 
     if(comment_body) {
-        console.log(post_id);
-        console.log(comment_body);
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({

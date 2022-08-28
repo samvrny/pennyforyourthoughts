@@ -14,8 +14,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    console.log(req.body.comment_body);
-    console.log(req.body.post_id);
     if(req.session) {
         Comment.create({
             comment_body: req.body.comment_body,
