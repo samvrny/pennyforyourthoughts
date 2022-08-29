@@ -75,6 +75,27 @@ nav {
     padding: 8px;
 }
 
+.post-textarea {
+    border: 3px solid #ef476f;
+    border-radius: 10px;
+    resize: none;
+    height: 200px;
+    width: 350px;
+    padding: 8px;
+}
+
+#title {
+    border: 3px solid #ef476f;
+    border-radius: 10px;
+    width: 300px;
+    padding: 6px;
+}
+
+.new-post-header {
+    border-bottom: 4px solid #1b9aaa;
+    padding-bottom: 7px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
