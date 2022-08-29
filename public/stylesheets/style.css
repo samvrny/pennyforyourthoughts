@@ -96,6 +96,10 @@ nav {
     padding-bottom: 7px;
 }
 
+.bottom-line {
+    border-bottom: 3px solid #ffc43d;
+}
+
 footer {
     /* position: fixed;
     bottom: 0; */

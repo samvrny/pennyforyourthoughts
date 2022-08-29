@@ -18,6 +18,29 @@
             </form>
         </section>
 
+        {{#if posts.length}}
+        <section class="col-6">
+            <h2 class="new-post-header">Your Posts</h2>
+            <ol>
+                {{#each posts as |post|}}
+                <li>
+                    <article>
+                        <div>
+                            <h3>{{post.title}}</h3>
+                            <p>Created on {{post.created_at}}</p>
+                        </div>
+                        </br>
+                        <div class="bottom-line">
+                            {{post.post_contents}}
+                        </div>
+                    </article>
+                </li>
+                </br>
+                {{/each}}
+            </ol>
+        </section>
+        {{/if}}
+
     </div>
 </div>
 
