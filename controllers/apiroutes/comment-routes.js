@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
+const authorize = require('../../utils/authorize');
 
 //get all comments from the database
 router.get('/', (req, res) => {
@@ -15,7 +16,7 @@ router.get('/', (req, res) => {
 });
 
 //post a new comment to the database
-router.post('/', (req, res) => {
+router.post('/', authorize, (req, res) => {
     if(req.session) {
         Comment.create({
             comment_body: req.body.comment_body,

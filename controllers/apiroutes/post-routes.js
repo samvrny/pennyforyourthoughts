@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
+const authorize = require('../../utils/authorize');
 
 //get all posts from the database
 router.get('/', (req, res) => {
@@ -59,7 +60,7 @@ router.get('/:id', (req, res) => {
 });
 
 //create a new post and add it to the database
-router.post('/', (req, res) => {
+router.post('/', authorize, (req, res) => {
     Post.create({
         title: req.body.title,
         post_contents: req.body.post_contents,
@@ -73,7 +74,7 @@ router.post('/', (req, res) => {
 });
 
 //update a post in the database
-router.put('/:id', (req, res) => {
+router.put('/:id', authorize, (req, res) => {
     Post.update(
         {
             title: req.body.title,
@@ -99,7 +100,7 @@ router.put('/:id', (req, res) => {
 });
 
 //delete a post from the database
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authorize, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

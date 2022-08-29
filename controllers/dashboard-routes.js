@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const authorize = require('../utils/authorize');
 
 //get all posts from the database and render the dashboard page
-router.get('/', (req, res) => {
+router.get('/', authorize, (req, res) => {
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -34,7 +35,7 @@ router.get('/', (req, res) => {
 });
 
 //get a post by it's id and render the edit post page
-router.get('/edit/:id', (req, res) => {
+router.get('/edit/:id', authorize, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
