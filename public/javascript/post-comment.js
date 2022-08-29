@@ -1,3 +1,4 @@
+//function that calls to add a comment
 async function postComment(event) {
     event.preventDefault();
 

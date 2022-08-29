@@ -1,3 +1,4 @@
+//function that calls to update a post
 async function updatePost(event) {
     event.preventDefault();
 

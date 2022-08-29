@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection'); //may not need this line
 const { User, Post, Comment } = require('../models');
 
+//get all posts and render the homepage
 router.get('/', (req, res) => {
     Post.findAll({
       attributes: [ 'id', 'title', 'post_contents', 'created_at' ],
@@ -12,7 +13,7 @@ router.get('/', (req, res) => {
           include: {
             model: User,
             attributes: ['username']
-          } //ask, why is this not working? VERY confused.
+          }
         },
         {
           model: User,
@@ -34,6 +35,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//get one post and render the comments page for it
 router.get('/post/:id', (req, res) =>  {
   Post.findOne({
     where: {
@@ -41,13 +43,12 @@ router.get('/post/:id', (req, res) =>  {
     },
     attributes: ['id', 'title', 'post_contents', 'user_id', 'created_at'],
     include: [
-      //User, { model: Comment, include: [User]}
       {
         model: Comment,
         attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
         include: {
             model: User,
-            attributes: ['username'] //this also is not working
+            attributes: ['username']
         }
       },
       {
@@ -57,7 +58,6 @@ router.get('/post/:id', (req, res) =>  {
     ]
   })
   .then(dbPostData => {
-    //console.log(dbPostData.comments);
     if(!dbPostData) {
       res.status(404).json({ message: 'No post found with this id.' });
       return;
@@ -75,8 +75,9 @@ router.get('/post/:id', (req, res) =>  {
   });
 });
 
+//render the login page
 router.get('/login', (req, res) => {
-  res.render('sign-login'); //can add more logic here to redirect if already logged in.
+  res.render('sign-login');
 });
 
 module.exports = router;

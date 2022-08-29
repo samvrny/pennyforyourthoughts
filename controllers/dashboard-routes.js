@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 
+//get all posts from the database and render the dashboard page
 router.get('/', (req, res) => {
     Post.findAll({
         where: {
@@ -32,6 +33,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//get a post by it's id and render the edit post page
 router.get('/edit/:id', (req, res) => {
     Post.findOne({
         where: {

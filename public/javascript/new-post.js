@@ -1,3 +1,4 @@
+//function that calls to create a new post
 async function newPost(event) {
     event.preventDefault();
     

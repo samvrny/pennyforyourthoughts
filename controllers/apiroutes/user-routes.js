@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-//get all users
+//get all users from the database
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
@@ -13,20 +13,28 @@ router.get('/', (req, res) => {
     });
 });
 
-//add get route for getting all users by id
-
+//post a new user to the database
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
     })
-    .then(dbUserData => res.json(dbUserData)) //will add session data here later
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json(dbUserData);
+        });
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     })
 });
 
+//login a user in the database and create a session
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -56,6 +64,7 @@ router.post('/login', (req, res) => {
     });
 });
 
+//log a user out and destroy a session
 router.post('/logout', (req, res) => {
     if(req.session.loggedIn) {
         req.session.destroy(() => {

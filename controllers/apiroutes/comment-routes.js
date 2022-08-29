@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 
+//get all comments from the database
 router.get('/', (req, res) => {
     Comment.findAll({
         attributes: ['id', 'comment_body', 'user_id', 'post_id', 'created_at'],
@@ -13,6 +14,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//post a new comment to the database
 router.post('/', (req, res) => {
     if(req.session) {
         Comment.create({

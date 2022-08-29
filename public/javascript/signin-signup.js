@@ -1,3 +1,4 @@
+//function that calls to 'sign up' (add a new user)
 async function signUp(event) {
     event.preventDefault();
     
@@ -14,13 +15,15 @@ async function signUp(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if(response.ok) {
-            window.alert('New user created!');
+            window.alert(`New user created! Welcome, ${username}`);
+            document.location.replace('/dashboard');
         } else {
             alert(response.statusText)
         }
     }
 }
 
+//function that calls to log in a user and create a new session
 async function login(event) {
     event.preventDefault();
 
@@ -38,7 +41,7 @@ async function login(event) {
         });
         if(response.ok) {
             window.alert(`Welcome, ${username}!`);
-            document.location.replace('/'); //This will change to dahsboard
+            document.location.replace('/dashboard');
         } else {
             window.alert('Incorrect credentials! Please try again.');
         }

@@ -1,3 +1,4 @@
+//function that calls to delete a post
 async function deletePost(event) {
     event.preventDefault();
     console.log('APPLE');
