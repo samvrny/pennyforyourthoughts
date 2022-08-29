@@ -89,6 +89,14 @@ nav {
     width: 650px;
 }
 
+.single-comment:nth-child(odd) {
+    background-color: #fff5eb;
+}
+
+.single-comment:nth-child(even) {
+    background-color: beige;
+}
+
 #title, #edit-post-title {
     border: 3px solid #ef476f;
     border-radius: 10px;

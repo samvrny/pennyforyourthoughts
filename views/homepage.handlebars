@@ -7,7 +7,7 @@
                     <div class="title-body">
                         <h2><span><a href="/post/{{post.id}}" class="post-title">{{post.title}}</a></span></h2>
                         <p>{{post.post_contents}}</p>
-                        <p>Written By: {{user.username}} On {{post.created_at}}</p>
+                        <p>Written By: {{user.username}} On {{format_date post.created_at}}</p>
                     </div>
                     {{#if comments.length}}
                     <div>

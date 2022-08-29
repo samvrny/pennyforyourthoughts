@@ -63,7 +63,7 @@ router.get('/post/:id', (req, res) =>  {
       return;
     }
     const post = dbPostData.get({ plain: true });
-    console.log(post);
+    
     res.render('post-comments', {
       post,
       loggedIn: req.session.loggedIn
