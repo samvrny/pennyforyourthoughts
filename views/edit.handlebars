@@ -1,0 +1,29 @@
+<div class="container text-center">
+    <div class="row justify-content-center">
+
+        <article class="col-8">
+            <h2>
+                Edit your post:
+            </h2>
+            <form>
+                <div>
+                    <input name="edit-post-title" id="edit-post-title" type="text" value="{{post.title}}"/>
+                </div>
+                </br>
+                <div>
+                    <textarea id="edit-post-body" class="edit-post-textarea">{{post.post_contents}}</textarea>
+                </div>
+                </br>
+                <button type="submit" class="btn btn-warning mb-3">Save Updated Post</button>
+                </br>
+                <button id="delete-post" type="button" class="btn btn-danger">Delete This Post</button>
+            </form>
+        </article>
+        
+        <h4 class="col-5 mt-5"><span><a href="/dashboard" class="post-title"> &larr; Back To Dashboard</a></span></h4>
+
+    </div>
+</div>
+
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/update-post.js"></script>

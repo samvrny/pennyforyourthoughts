@@ -41,6 +41,7 @@ router.get('/post/:id', (req, res) =>  {
     },
     attributes: ['id', 'title', 'post_contents', 'user_id', 'created_at'],
     include: [
+      //User, { model: Comment, include: [User]}
       {
         model: Comment,
         attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
@@ -62,7 +63,7 @@ router.get('/post/:id', (req, res) =>  {
       return;
     }
     const post = dbPostData.get({ plain: true });
-
+    console.log(post);
     res.render('post-comments', {
       post,
       loggedIn: req.session.loggedIn

@@ -9,7 +9,7 @@
             <ul>
                 {{#each post.comments as |comment|}}
                 <li class="comments">
-                    <p>On {{comment.created_at}}, {{comment.username}} wrote:</p>
+                    <p>On {{comment.created_at}}, {{comment.user.username}} wrote:</p>
                     <p>"{{comment.comment_body}}"</p>
                 </li>
                 {{/each}}
