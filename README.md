@@ -1,8 +1,8 @@
-# Simply Thought Stuff
+# Penny For Your Thoughts
 
 ## Description
 
-Simply Thought Stuff is a simple blog where users can view posts, make new posts, comment on and vote on posts. Made for anyone to be able to share their thoughts! The sky is the limit.
+Penny For Your Thoughts is a simple blog where users can view posts, make new posts, and comment upon other users posts. Made for anyone to be able to share their thoughts! 
 
 ## Usage
 
