@@ -12,13 +12,13 @@ https://fast-island-88973.herokuapp.com/
 
 Here are some screenshots of the deployed application:
 
-![](./public/images/simply1.png)
+![](./public/images/Penny1.png)
 
-![](./public/images/simply2.png)
+![](./public/images/Penny2.png)
 
-![](./public/images/simply3.png)
+![](./public/images/Penny3.png)
 
-![](./public/images/simply4.png)
+![](./public/images/Penny4.png)
 
 ## Built With
 * Javascript
