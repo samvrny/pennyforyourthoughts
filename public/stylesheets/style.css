@@ -103,6 +103,23 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
+/* dashboard styles */
+.new-post-header {
+    border-bottom: 4px solid #3d5a80;
+    padding-bottom: 7px;
+    color: #293241;
+    font-weight: 600;
+}
+
+.my-post {
+    border-bottom: 3px solid #3d5a80;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+
 .single-post {
     border-bottom: 4px solid #3d5a80;
     margin-bottom: 10px;
@@ -141,15 +158,6 @@ nav a:hover {
     border-radius: 10px;
     width: 300px;
     padding: 6px;
-}
-
-.new-post-header {
-    border-bottom: 4px solid #3d5a80;
-    padding-bottom: 7px;
-}
-
-.bottom-line {
-    border-bottom: 3px solid #ffc43d;
 }
 
 footer {
