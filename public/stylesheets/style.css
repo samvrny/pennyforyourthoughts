@@ -1,3 +1,4 @@
+/* global styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,10 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+}
+
+ul, ol {
+    list-style: none;
 }
 
 /* header and navigation styles  */
@@ -61,8 +66,41 @@ nav a:hover {
     color: #3d5a80;
 }
 
+/* homepage styles */
 .title-body h2 {
     border-bottom: 4px solid #3d5a80;
+    padding-bottom: 10px;
+}
+
+.post-title {
+    text-decoration: none;
+    color: #293241;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.post-title:hover {
+    color: #ffc43d;
+}
+
+.post-body {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.com-amounts {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: #3d5a80;
+}
+
+.com-amounts:hover {
+    color: #ffc43d;
+}
+
+.post-li {
+    margin-bottom: 20px;
 }
 
 .single-post {
@@ -112,10 +150,6 @@ nav a:hover {
 
 .bottom-line {
     border-bottom: 3px solid #ffc43d;
-}
-
-.post-title {
-    text-decoration: none;
 }
 
 footer {

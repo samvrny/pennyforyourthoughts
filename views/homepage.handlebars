@@ -2,16 +2,16 @@
     {{#each posts as |post|}}
     <div class="container text-center">
         <div class="row justify-content-center">
-            <li class="col-8">
+            <li class="col-8 post-li">
                 <article class="mb-3">
                     <div class="title-body">
                         <h2><span><a href="/post/{{post.id}}" class="post-title">{{post.title}}</a></span></h2>
-                        <p>{{post.post_contents}}</p>
+                        <p class="post-body">{{post.post_contents}}</p>
                         <p>Written By: {{user.username}} On {{format_date post.created_at}}</p>
                     </div>
                     {{#if comments.length}}
                     <div>
-                        <a href="/post/{{post.id}}">View {{comments.length}} Comment(s)</a>
+                        <a class="com-amounts" href="/post/{{post.id}}">> View {{comments.length}} Comment(s) < </a>
                     </div>
                     {{/if}}
                 </article>
