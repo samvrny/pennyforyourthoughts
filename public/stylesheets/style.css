@@ -19,6 +19,29 @@ ul, ol {
     list-style: none;
 }
 
+.single-post h2, .comments h3, .edit-post-title {
+    color: #293241;
+    font-weight: 600;
+    font-size: 35px
+}
+
+/* global textarea and input styles */
+.comment-textarea, .post-textarea, .edit-post-textarea {
+    border-radius: 10px;
+    resize: none;
+    height: 200px;
+    width: 350px;
+    padding: 8px;
+}
+
+.post-textarea, .edit-post-textarea, .comment-textarea {
+    border: 3px solid #ffc43d;
+}
+
+.edit-post-textarea {
+    width: 650px;
+}
+
 /* header and navigation styles  */
 header {
     background:#293241;
@@ -118,8 +141,13 @@ nav a:hover {
     font-weight: 700;
 }
 
+.create-post-form h5 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #293241;
+}
 
-
+/* single post/view comments styles */
 .single-post {
     border-bottom: 4px solid #3d5a80;
     margin-bottom: 10px;
@@ -129,20 +157,15 @@ nav a:hover {
     margin-top: 7px;
 }
 
-.comment-textarea, .post-textarea, .edit-post-textarea {
-    border-radius: 10px;
-    resize: none;
-    height: 200px;
-    width: 350px;
-    padding: 8px;
+.single-post p, .single-comment p {
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.post-textarea, .edit-post-textarea, .comment-textarea {
-    border: 3px solid #ffc43d;
-}
-
-.edit-post-textarea {
-    width: 650px;
+.post-comment-form h3 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #293241;
 }
 
 .single-comment:nth-child(odd) {
@@ -153,6 +176,7 @@ nav a:hover {
     background-color: #e0fbfc;
 }
 
+/* edit post styles */
 #title, #edit-post-title {
     border: 3px solid #ffc43d;
     border-radius: 10px;
@@ -160,6 +184,7 @@ nav a:hover {
     padding: 6px;
 }
 
+/* footer styles */
 footer {
     bottom: 0;
     margin-top: auto;
