@@ -8,10 +8,11 @@ const handlebars = expressHandlebars.create({ helpers });
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+//the session is set to expire after 30 minutes, so if you are logged in longer than that you will be logged out.
 const sess = {
     secret: 'A beer a day',
     cookie: { 
-        expires: 5 * 60 * 1000
+        expires: 30 * 60 * 1000
     },
     resave: false,
     saveUninitialized: true,

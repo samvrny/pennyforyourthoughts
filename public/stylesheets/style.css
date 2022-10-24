@@ -14,8 +14,9 @@ body {
     flex-direction: column;
 }
 
+/* header and navigation styles  */
 header {
-    background: linear-gradient(to bottom right, #1b9aaa, #ef476f, #ffc43d);
+    background:#293241;
     width: 100%;
     min-height: 80px;
     display: flex;
@@ -27,12 +28,12 @@ header {
 
 header h1 {
     margin-left: 2.75%;
-    color: yellow;
+    color: #e0fbfc;
 }
 
 header a {
     text-decoration: none;
-    color: yellow;
+    color: #e0fbfc;
 }
 
 nav {
@@ -41,8 +42,8 @@ nav {
     width: 35%;
 }
 
-.title-body h2 {
-    border-bottom: 4px solid #1b9aaa;
+nav a:hover {
+    color: #3d5a80;
 }
 
 .logout-btn {
@@ -51,17 +52,21 @@ nav {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: yellow;
+    color: #e0fbfc;
     font-size: 100%;
     transition: color .1s;
 }
 
 .logout-btn:hover {
-    color: #0000EE;
+    color: #3d5a80;
+}
+
+.title-body h2 {
+    border-bottom: 4px solid #3d5a80;
 }
 
 .single-post {
-    border-bottom: 4px solid #1b9aaa;
+    border-bottom: 4px solid #3d5a80;
     margin-bottom: 10px;
 }
 
@@ -77,12 +82,8 @@ nav {
     padding: 8px;
 }
 
-.comment-textarea {
+.post-textarea, .edit-post-textarea, .comment-textarea {
     border: 3px solid #ffc43d;
-}
-
-.post-textarea, .edit-post-textarea {
-    border: 3px solid #ef476f;
 }
 
 .edit-post-textarea {
@@ -90,22 +91,22 @@ nav {
 }
 
 .single-comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #98c1d9;
 }
 
 .single-comment:nth-child(even) {
-    background-color: beige;
+    background-color: #e0fbfc;
 }
 
 #title, #edit-post-title {
-    border: 3px solid #ef476f;
+    border: 3px solid #ffc43d;
     border-radius: 10px;
     width: 300px;
     padding: 6px;
 }
 
 .new-post-header {
-    border-bottom: 4px solid #1b9aaa;
+    border-bottom: 4px solid #3d5a80;
     padding-bottom: 7px;
 }
 
@@ -120,7 +121,8 @@ nav {
 footer {
     bottom: 0;
     margin-top: auto;
-    background: #f8ffe5;
+    background: #293241;
+    color: #e0fbfc;
     width: 100%;
     min-height: 60px;
     font-size: 20px;
